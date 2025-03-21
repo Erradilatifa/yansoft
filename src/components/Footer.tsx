@@ -19,9 +19,12 @@ const Footer = () => {
     {
       title: "Entreprise",
       links: [
-        { name: "À propos", href: "#" },
-        { name: "Équipe", href: "#team" },
-        { name: "Témoignages", href: "#testimonials" },
+        { name: "Accueil", href: "#hero" },
+        { name: "À À propos de YANSOFT", href: "#about" },
+        { name: "Services", href: "#services" },
+        { name: "Chatbot", href: "#chatbot" },
+        { name: "ERT", href: "#ert" },
+        { name: "Pack Lancement", href: "#pack" },
         { name: "Contact", href: "#contact" },
       ]
     },

@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote } from "lucide-react";
+import { Image, Quote } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -29,6 +30,10 @@ const Testimonials = () => {
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
   const cardsRef = useRef([]);
+
+  const setCardRef = useCallback((el, index) => {
+    cardsRef.current[index] = el;
+  }, []);
 
   useEffect(() => {
     // Animation for the section title and subtitle
@@ -78,9 +83,6 @@ const Testimonials = () => {
       );
       
       // Hover animations
-      gsap.set(card, { clearProps: "all" }); // Clear all props after initial animation
-      
-      // Quote icon animation
       const quoteIcon = card.querySelector(".quote-icon");
       const cardContent = card.querySelector(".card-content");
       const cardImage = card.querySelector(".card-image");
@@ -111,6 +113,7 @@ const Testimonials = () => {
       id="testimonials" 
       className="py-16 md:py-24 bg-gray-50 overflow-hidden"
       ref={sectionRef}
+      aria-label="Témoignages de nos clients"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -130,21 +133,21 @@ const Testimonials = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 w-full max-w-9xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <Card 
+            <Card
               key={index} 
               className="border border-gray-200 transition-shadow cursor-pointer"
-              ref={el => cardsRef.current[index] = el}
+              ref={el => setCardRef(el, index)}
             >
               <CardContent className="p-6 pt-8 flex flex-col items-center text-center card-content">
-                <Quote className="h-10 w-10 text-blue-500 mb-6 opacity-20 quote-icon" />
+                <Quote className="h-10 w-10 text-blue-500 mb-6 opacity-20 quote-icon" aria-hidden="true" />
                 <p className="text-gray-700 mb-6 italic">"{testimonial.content}"</p>
                 <div className="flex flex-col items-center overflow-hidden">
-                  <img 
-                    src={testimonial.image} 
-                    className="w-full h-48 object-cover border-2 border-white shadow-sm opacity-95 card-image" 
-                    alt="Témoignage client"
-                  />
-                </div>
+  <img
+    src={testimonial.image}
+    alt="Témoignage client"
+    className="w-full h-48 object-cover border-2 border-white shadow-sm opacity-95 card-image"
+  />
+</div>
               </CardContent>
             </Card>
           ))}

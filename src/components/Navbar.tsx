@@ -42,6 +42,8 @@ const Navbar = () => {
             <a href="#chatbot" className="text-brand-dark hover:text-brand-blue transition-colors">Chatbot</a>
             <a href="#ert" className="text-brand-dark hover:text-brand-blue transition-colors">ERT</a>
             <a href="#pack" className="text-brand-dark hover:text-brand-blue transition-colors">Pack Lancement</a>
+            <a href="#contact" className="text-brand-dark hover:text-brand-blue transition-colors">Contact</a>
+
 
 
             
@@ -81,10 +83,16 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="#hero" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Accueil</a>
             <a href="#about" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>À propos de YANSOFT</a>
+            <a href="#services" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="#chatbot" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Chatbot</a>
-            <a href="#marketing" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Marketing Digital</a>
+            <a href="#ert" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>ERT</a>
+            <a href="#pack" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Pack Lancement</a>
+            <a href="#contact" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+
+            
             {/* <a href="#services" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Services</a>
             <a href="#testimonials" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Témoignages</a>
+            <a href="#marketing" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Marketing Digital</a>
             <a href="#team" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Équipe</a>
             <a href="#portfolio" className="block px-3 py-2 text-brand-dark hover:bg-gray-50 rounded-md" onClick={() => setMobileMenuOpen(false)}>Portfolio</a>*/}
             <div className="px-3 py-2">

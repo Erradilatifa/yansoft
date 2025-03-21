@@ -11,6 +11,7 @@ import About from "@/components/about";
 import Experience from "@/components/Expérience";
 import Chatbot from "@/components/Chatbot";
 import Marketing from "@/components/Marketing";
+import './style.css';
 import ERPPage from "@/components/ERPPage";
 import PackLancementPage from "@/components/PackLancementPage";
 
@@ -25,16 +26,19 @@ const Index = () => {
       <About/>
       <Experience/>
       <Services />
+      <Testimonials />
       <Chatbot/>
       <ERPPage/>
       <PackLancementPage/>
+      <Team/>
+      <Contact /> 
       <Footer />
      
       
        {/*
-      <Testimonials />
+      
        <Marketing/>
-      <Testimonials />
+    
       <Team/>
       <Contact /> 
      
