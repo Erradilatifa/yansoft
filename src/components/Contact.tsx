@@ -9,14 +9,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 const Contact = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    tel:'',
+    tel: '',
     societe: '',
     message: ''
   });
@@ -29,8 +31,9 @@ const Contact = () => {
   const formCardRef = useRef(null);
   const formElementsRef = useRef([]);
   const contactCardsRef = useRef([]);
+  const buttonRef = useRef(null);
   
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -38,45 +41,63 @@ const Contact = () => {
     }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     
     // Animate button while loading
-    gsap.to(e.currentTarget.querySelector('button'), {
-      scale: 0.95,
-      duration: 0.2,
-      yoyo: true,
-      repeat: 3
-    });
+    if (buttonRef.current) {
+      gsap.to(buttonRef.current, {
+        scale: 0.95,
+        duration: 0.2,
+        yoyo: true,
+        repeat: 3
+      });
+    }
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      // Simulate form submission - in a real app, replace with actual API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Show success message
       toast({
         title: "Message envoyé !",
         description: "Nous vous répondrons dans les plus brefs délais.",
         duration: 5000,
       });
+      
+      // Reset form
       setFormData({
         name: '',
         email: '',
-        tel:'',
+        tel: '',
         societe: '',
         message: ''
       });
       
       // Success animation
-      gsap.fromTo(
-        formCardRef.current,
-        { boxShadow: "0 0 0 rgba(74, 222, 128, 0)" },
-        { 
-          boxShadow: "0 0 20px rgba(74, 222, 128, 0.6), 0 0 0 rgba(74, 222, 128, 0)",
-          duration: 1,
-          ease: "power2.out"
-        }
-      );
-    }, 1500);
+      if (formCardRef.current) {
+        gsap.fromTo(
+          formCardRef.current,
+          { boxShadow: "0 0 0 rgba(74, 222, 128, 0)" },
+          { 
+            boxShadow: "0 0 20px rgba(74, 222, 128, 0.6), 0 0 0 rgba(74, 222, 128, 0)",
+            duration: 1,
+            ease: "power2.out"
+          }
+        );
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
   
   const contactInfo = [
@@ -98,87 +119,107 @@ const Contact = () => {
   ];
   
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    // Store refs in arrays for cleanup
+    const formElements = formElementsRef.current;
+    const contactCards = contactCardsRef.current;
+    
     // Initial animations
     const tl = gsap.timeline();
     
     // Header animations
-    tl.fromTo(
-      titleRef.current,
-      { y: -50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
-    );
-    
-    tl.fromTo(
-      subtitleRef.current,
-      { y: -30, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
-      "-=0.5"
-    );
+    if (titleRef.current && subtitleRef.current) {
+      tl.fromTo(
+        titleRef.current,
+        { y: -50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+      );
+      
+      tl.fromTo(
+        subtitleRef.current,
+        { y: -30, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+        "-=0.5"
+      );
+    }
     
     // Form card animation
-    tl.fromTo(
-      formCardRef.current,
-      { y: 50, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
-      "-=0.4"
-    );
+    if (formCardRef.current) {
+      tl.fromTo(
+        formCardRef.current,
+        { y: 50, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+        "-=0.4"
+      );
+    }
     
     // Form elements staggered animation
-    tl.fromTo(
-      formElementsRef.current,
-      { x: -20, opacity: 0 },
-      { 
-        x: 0, 
-        opacity: 1, 
-        stagger: 0.1, 
-        duration: 0.5, 
-        ease: "power2.out" 
-      },
-      "-=0.3"
-    );
+    if (formElements.length > 0) {
+      tl.fromTo(
+        formElements,
+        { x: -20, opacity: 0 },
+        { 
+          x: 0, 
+          opacity: 1, 
+          stagger: 0.1, 
+          duration: 0.5, 
+          ease: "power2.out" 
+        },
+        "-=0.3"
+      );
+      
+      // Hover effects for form fields
+      formElements.forEach(el => {
+        if (el) {
+          el.addEventListener('focus', () => {
+            gsap.to(el, {
+              boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)",
+              duration: 0.3
+            });
+          });
+          
+          el.addEventListener('blur', () => {
+            gsap.to(el, {
+              boxShadow: "none",
+              duration: 0.3
+            });
+          });
+        }
+      });
+    }
     
     // Contact cards animation with scroll trigger
-    contactCardsRef.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { x: 50, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: card,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          },
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          delay: index * 0.2,
-          ease: "power2.out"
+    if (contactCards.length > 0) {
+      contactCards.forEach((card, index) => {
+        if (card) {
+          gsap.fromTo(
+            card,
+            { x: 50, opacity: 0 },
+            {
+              scrollTrigger: {
+                trigger: card,
+                start: "top 80%",
+                toggleActions: "play none none reverse"
+              },
+              x: 0,
+              opacity: 1,
+              duration: 0.8,
+              delay: index * 0.2,
+              ease: "power2.out"
+            }
+          );
         }
-      );
-    });
-    
-    // Hover effects for form fields
-    formElementsRef.current.forEach(el => {
-      el.addEventListener('focus', () => {
-        gsap.to(el, {
-          boxShadow: "0 0 0 2px rgba(99, 102, 241, 0.4)",
-          duration: 0.3
-        });
       });
-      
-      el.addEventListener('blur', () => {
-        gsap.to(el, {
-          boxShadow: "none",
-          duration: 0.3
-        });
-      });
-    });
+    }
     
     // Clean up
     return () => {
-      formElementsRef.current.forEach(el => {
-        el.removeEventListener('focus', () => {});
-        el.removeEventListener('blur', () => {});
+      formElements.forEach(el => {
+        if (el) {
+          el.removeEventListener('focus', () => {});
+          el.removeEventListener('blur', () => {});
+        }
       });
       
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -228,19 +269,19 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className='space-y-2' >
-                    <label htmlFor="societe" className="text-sm font-medium">Société</label>
-                    <Input 
-                      id="societe" 
-                      name="societe" 
-                      placeholder="Votre société" 
-                      value={formData.societe}
-                      onChange={handleInputChange}
-                      required 
-                      ref={el => formElementsRef.current[2] = el}
-                    />
+                    <div className='space-y-2'>
+                      <label htmlFor="societe" className="text-sm font-medium">Société</label>
+                      <Input 
+                        id="societe" 
+                        name="societe" 
+                        placeholder="Votre société" 
+                        value={formData.societe}
+                        onChange={handleInputChange}
+                        required 
+                        ref={el => formElementsRef.current[2] = el}
+                      />
                     </div>
-                    <div className='space-y-2' >
+                    <div className='space-y-2'>
                       <label htmlFor="tel" className="text-sm font-medium">Téléphone</label>
                       <Input 
                         id="tel" 
@@ -271,7 +312,10 @@ const Contact = () => {
                     type="submit" 
                     className="w-full md:w-auto" 
                     disabled={isLoading}
-                    ref={el => formElementsRef.current[5] = el}
+                    ref={(el) => {
+                      formElementsRef.current[5] = el;
+                      buttonRef.current = el;
+                    }}
                   >
                     {isLoading ? 'Envoi en cours...' : 'Envoyer le message'}
                   </Button>

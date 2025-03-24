@@ -6,12 +6,12 @@ import { Link } from 'react-router-dom';
 
 const ERPPage = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <section className="py-16 relative" id='ert'>
         {/* Background gradients - fixed position */}
-        <div className="fixed inset-0 bg-gradient-to-br from-blue-50 to-slate-100 -z-10"></div>
-        <div className="fixed w-[500px] h-[500px] rounded-full bg-blue-100/50 blur-3xl -top-64 -right-64 -z-10 animate-pulse-soft"></div>
-        <div className="fixed w-[500px] h-[500px] rounded-full bg-blue-100/50 blur-3xl -bottom-64 -left-64 -z-10 animate-pulse-soft" style={{ animationDelay: '1s' }}></div>
+        <div className="inset-0 bg-gradient-to-br from-blue-50 to-slate-100 -z-10"></div>
+        <div className=" rounded-full bg-blue-100/50 blur-3xl -top-64 -right-64 -z-10 animate-pulse-soft"></div>
+        <div className=" rounded-full bg-blue-100/50 blur-3xl -bottom-64 -left-64 -z-10 animate-pulse-soft" style={{ animationDelay: '1s' }}></div>
         
         {/* Main content */}
         <div className="container mx-auto px-4">
