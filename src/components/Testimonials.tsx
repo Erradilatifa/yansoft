@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Image, Quote } from "lucide-react";
+import { Quote, Smartphone, Globe } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -12,16 +11,22 @@ if (typeof window !== "undefined") {
 
 const testimonials = [
   {
-    content: "L'équipe a créé une application qui a dépassé toutes nos attentes. Leur attention aux détails et leur expertise technique ont été impressionnantes.",
-    image: "https://img.freepik.com/free-photo/collage-customer-experience-concept_23-2149367139.jpg?ga=GA1.1.1809202442.1705419947&semt=ais_hybrid"
+    content: "L'équipe a créé une application mobile qui a dépassé toutes nos attentes. Leur attention aux détails et leur expertise technique ont été impressionnantes.",
+    image: "https://img.freepik.com/free-photo/collage-customer-experience-concept_23-2149367139.jpg?ga=GA1.1.1809202442.1705419947&semt=ais_hybrid",
+    type: "mobile",
+    format: "Application Mobile"
   },
   {
-    content: "Professionnalisme, réactivité et qualité caractérisent cette agence, qui a transformé notre idée en une application mobile performante.",
-    image: "https://img.freepik.com/premium-photo/customer-satisfaction-survey-concept-users-rate-service-experiences-online-application-customers-can-evaluate-quality-service-leading-business-reputation-rating_1226545-1003.jpg?ga=GA1.1.1809202442.1705419947&semt=ais_hybrid"
+    content: "Notre site web professionnel a transformé notre présence en ligne. Une stratégie numérique qui génère des résultats concrets et attire de nouveaux clients.",
+    image: "https://img.freepik.com/premium-photo/customer-satisfaction-survey-concept-users-rate-service-experiences-online-application-customers-can-evaluate-quality-service-leading-business-reputation-rating_1226545-1003.jpg?ga=GA1.1.1809202442.1705419947&semt=ais_hybrid",
+    type: "web",
+    format: "Site Web Professionnel"
   },
   {
-    content: "Leur approche méthodique et leur communication claire ont rendu le processus de développement sans stress. Le résultat final est un site web qui génère des résultats concrets",
-    image: "https://img.freepik.com/premium-photo/firstclass-service-quality-assurance-warranty-foundation-iso-certification-concept-foundation-satisfaction-service-experience-exhibition-foundation-production_808398-340.jpg?ga=GA1.1.1809202442.1705419947&semt=ais_hybrid"
+    content: "Une solution digitale complète qui combine application mobile et présence web, offrant une expérience utilisateur fluide et cohérente.",
+    image: "https://img.freepik.com/premium-photo/firstclass-service-quality-assurance-warranty-foundation-iso-certification-concept-foundation-satisfaction-service-experience-exhibition-foundation-production_808398-340.jpg?ga=GA1.1.1809202442.1705419947&semt=ais_hybrid",
+    type: "multi",
+    format: "Solution Digitale Complète"
   }
 ];
 
@@ -36,7 +41,7 @@ const Testimonials = () => {
   }, []);
 
   useEffect(() => {
-    // Animation for the section title and subtitle
+    // Animation similar to previous version...
     const headerTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -58,22 +63,18 @@ const Testimonials = () => {
         "-=0.5"
       );
 
-    // Animation for the testimonial cards
+    // Card animations and interactions
     cardsRef.current.forEach((card, index) => {
       gsap.fromTo(
         card,
-        { 
-          opacity: 0, 
-          y: 50,
-          scale: 0.95
-        },
+        { opacity: 0, y: 50, scale: 0.95 },
         { 
           opacity: 1, 
           y: 0,
           scale: 1,
           duration: 0.8, 
           ease: "power3.out",
-          delay: 0.3 + index * 0.2, // Staggered delay
+          delay: 0.3 + index * 0.2,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: "top 70%",
@@ -82,31 +83,49 @@ const Testimonials = () => {
         }
       );
       
-      // Hover animations
-      const quoteIcon = card.querySelector(".quote-icon");
+      // Hover and interaction effects
+      const typeIcon = card.querySelector(".type-icon");
       const cardContent = card.querySelector(".card-content");
       const cardImage = card.querySelector(".card-image");
       
       card.addEventListener("mouseenter", () => {
         gsap.to(card, { y: -10, duration: 0.3, ease: "power2.out" });
-        gsap.to(quoteIcon, { scale: 1.2, rotate: 10, opacity: 0.4, duration: 0.4 });
+        gsap.to(typeIcon, { scale: 1.2, rotate: 10, opacity: 0.7, duration: 0.4 });
         gsap.to(cardContent, { y: -5, duration: 0.3 });
         gsap.to(cardImage, { scale: 1.05, duration: 0.4 });
       });
       
       card.addEventListener("mouseleave", () => {
         gsap.to(card, { y: 0, duration: 0.5, ease: "power2.out" });
-        gsap.to(quoteIcon, { scale: 1, rotate: 0, opacity: 0.2, duration: 0.4 });
+        gsap.to(typeIcon, { scale: 1, rotate: 0, opacity: 0.5, duration: 0.4 });
         gsap.to(cardContent, { y: 0, duration: 0.3 });
         gsap.to(cardImage, { scale: 1, duration: 0.4 });
       });
     });
 
     return () => {
-      // Clean up ScrollTrigger
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
+
+  // Fonction pour sélectionner l'icône en fonction du type
+  const getTypeIcon = (type) => {
+    switch(type) {
+      case 'mobile':
+        return <Smartphone className="h-8 w-8 text-blue-500 type-icon" />;
+      case 'web':
+        return <Globe className="h-8 w-8 text-green-500 type-icon" />;
+      case 'multi':
+        return (
+          <div className="flex items-center gap-2">
+            <Smartphone className="h-6 w-6 text-blue-500" />
+            <Globe className="h-6 w-6 text-green-500" />
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
     <section 
@@ -121,13 +140,13 @@ const Testimonials = () => {
             className="text-3xl md:text-4xl font-bold mb-4"
             ref={titleRef}
           >
-            Ce que disent nos clients
+            Nos Solutions Digitales en Action
           </h2>
           <p 
             className="text-xl text-gray-600"
             ref={subtitleRef}
           >
-            Nous sommes fiers d'aider nos clients à réussir dans leur transformation numérique.
+            Des solutions personnalisées qui transforment vos défis digitaux en opportunités de croissance.
           </p>
         </div>
         
@@ -135,19 +154,32 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index} 
-              className="border border-gray-200 transition-shadow cursor-pointer"
+              className="border border-gray-200 transition-shadow cursor-pointer hover:shadow-lg"
               ref={el => setCardRef(el, index)}
             >
               <CardContent className="p-6 pt-8 flex flex-col items-center text-center card-content">
-                <Quote className="h-10 w-10 text-blue-500 mb-6 opacity-20 quote-icon" aria-hidden="true" />
-                <p className="text-gray-700 mb-6 italic">"{testimonial.content}"</p>
-                <div className="flex flex-col items-center overflow-hidden">
-  <img
-    src={testimonial.image}
-    alt="Témoignage client"
-    className="w-full h-48 object-cover border-2 border-white shadow-sm opacity-95 card-image"
-  />
-</div>
+                <div className="mb-4 opacity-50">
+                  {getTypeIcon(testimonial.type)}
+                </div>
+                
+                <Quote className="h-10 w-10 text-blue-500 mb-4 opacity-20" aria-hidden="true" />
+                
+                <p className="text-gray-700 mb-6 italic text-base">
+                  "{testimonial.content}"
+                </p>
+                
+                <div className="flex flex-col items-center w-full">
+                  <div className="mb-2 font-semibold text-sm text-gray-600">
+                    {testimonial.format}
+                  </div>
+                  <div className="w-full h-48 overflow-hidden rounded-md">
+                    <img
+                      src={testimonial.image}
+                      alt="Témoignage client"
+                      className="w-full h-full object-cover border-2 border-white shadow-sm opacity-90 card-image"
+                    />
+                  </div>
+                </div>
               </CardContent>
             </Card>
           ))}
