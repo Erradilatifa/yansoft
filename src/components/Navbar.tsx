@@ -25,7 +25,7 @@ const Navbar = () => {
     { href: "#about", label: "À propos de YANSOFT" },
     { href: "#services", label: "Services" },
     { href: "#chatbot", label: "Chatbot" },
-    { href: "#ert", label: "ERT" },
+    { href: "#ertpage", label: "ERT" },
     { href: "#pack", label: "Pack Lancement" },
     { href: "#contact", label: "Contact" }
   ];

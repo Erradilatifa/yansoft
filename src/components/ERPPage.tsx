@@ -3,11 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { BadgeDollarSign, Package, Shield, Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const ERPPage = () => {
   return (
     <div className="min-h-screen">
-      <section className="py-12 sm:py-16 md:py-20 relative" id='erp'>
+      <section className="py-12 sm:py-16 md:py-20 relative" id="ertpage">
         {/* Background gradients - responsive positioning */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-slate-100 -z-10"></div>
         <div className="absolute rounded-full bg-blue-100/50 blur-3xl -top-32 sm:-top-48 md:-top-64 -right-32 sm:-right-48 md:-right-64 -z-10 animate-pulse-soft"></div>
