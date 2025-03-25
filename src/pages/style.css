@@ -1,9 +1,9 @@
 body {
-    overflow-x: hidden;
-    max-width: 100vw;
-    
-    
+    /* Largeur maximale */
+    width: 100%; /* Prend 90% de l'écran */
+    margin: auto; /* Centrage */
 }
+
 
 
 

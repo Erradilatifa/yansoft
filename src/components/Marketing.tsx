@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Link } from 'lucide-react';
  // Assurez-vous d'importer Link depuis next/link
-import Navbar from '@/components/Navbar';
+
 
 const Index = () => {
   useEffect(() => {
@@ -11,7 +11,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-marketing-light overflow-hidden">
-      <Navbar />
+     
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 md:px-10 lg:px-20">

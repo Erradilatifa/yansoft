@@ -1,118 +1,122 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Rocket, PenTool, Globe, BadgeDollarSign, TrendingUp } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 
 const PackLancementPage = () => {
+  const services = [
+    {
+      icon: PenTool,
+      iconColor: 'text-purple-600',
+      title: 'CRÉATION DE LOGO',
+      description: 'Design professionnel d\'un logo unique qui représente parfaitement votre marque.',
+      badgeColor: 'bg-purple-100 text-purple-700'
+    },
+    {
+      icon: Globe,
+      iconColor: 'text-green-600',
+      title: 'SITE WEB',
+      description: 'Création d\'un site web professionnel, responsive et optimisé pour les moteurs de recherche.',
+      badgeColor: 'bg-green-100 text-green-700'
+    },
+    {
+      icon: BadgeDollarSign,
+      iconColor: 'text-amber-600',
+      title: '3 MOIS D\'ABONNEMENT ERP',
+      description: 'Accès complet à notre solution ERP pour gérer efficacement votre entreprise pendant 3 mois.',
+      badgeColor: 'bg-amber-100 text-amber-700'
+    },
+    {
+      icon: TrendingUp,
+      iconColor: 'text-red-600',
+      title: '1 MOIS DE MARKETING DIGITAL',
+      description: 'Stratégie complète de marketing digital pour booster votre visibilité en ligne pendant 1 mois.',
+      badgeColor: 'bg-red-100 text-red-700'
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex flex-col">
-     {/* Pack Details Section */}
-      <section className="py-8 md:py-16 bg-slate-50" id='pack'>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-slate-100 -z-10"></div>
-        <div className="absolute w-10 md:w-52 lg:w-[100px] h-64 md:h-86 lg:h-[200px] rounded-full bg-blue-100/50 blur-3xl -top-32 md:-top-64 -right-32 md:-right-64 -z-10 animate-pulse-soft"></div>
-        <div className="absolute w-10 md:w-52 lg:w-[100px] h-64 md:h-86 lg:h-[200px] rounded-full bg-blue-100/50 blur-3xl -bottom-32 md:-bottom-64 -left-32 md:-left-64 -z-10 animate-pulse-soft" style={{ animationDelay: '1s' }}></div>
+    <div className="min-h-screen flex flex-col items-center 
+      w-full 
+      sm:w-full 
+      md:w-[768px] 
+      lg:w-[1024px] 
+      xl:w-[1100px] 
+      mx-auto 
+      px-4
+    ">
+      {/* Pack Details Section */}
+      <section className="w-full max-w-5xl py-8 md:py-16 bg-slate-50" id='pack'>
+        {/* Responsive Gradient Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-slate-100 -z-10 opacity-50"></div>
         
-        <div className="container mx-auto px-4 bg-white rounded-lg shadow-sm">
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto animate-fade-up">
-            <div className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium mb-4 md:mb-6 animate-blur-in">
-              Offre Spéciale
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 md:mb-6 text-slate-900">
-              <span className="text-blue-500">Pack</span> Lancement
-            </h1>
-            <p className="text-base md:text-lg text-slate-700 mb-6 md:mb-8 max-w-2xl">
-              Tout ce dont vous avez besoin pour lancer votre entreprise avec une présence en ligne professionnelle.
-            </p>
-          </div>
-        </div>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Ce que comprend le <span className="text-blue-500">pack</span></h2>
-            <p className="text-base md:text-lg text-slate-700 max-w-2xl mx-auto">
+          <div className="bg-white rounded-lg shadow-sm p-4 md:p-8">
+            <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-4 md:space-y-6">
+              <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs md:text-sm font-medium">
+                Offre Spéciale
+              </div>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900">
+                <span className="text-blue-500">Pack</span> Lancement
+              </h1>
+              <p className="text-sm md:text-base text-slate-700 max-w-2xl">
+                Tout ce dont vous avez besoin pour lancer votre entreprise avec une présence en ligne professionnelle.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center my-6 md:my-12">
+            <h2 className="text-xl md:text-2xl font-bold mb-2 md:mb-4">
+              Ce que comprend le <span className="text-blue-500">pack</span>
+            </h2>
+            <p className="text-xs md:text-base text-slate-700 max-w-2xl mx-auto">
               Une solution complète pour lancer votre entreprise en ligne
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 max-w-6xl mx-auto">
-            {/* Service 1 - Logo */}
-            <Card className="border-2 border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-blue-200 animate-fade-up flex flex-col h-full bg-white" style={{ animationDelay: '0.1s' }}>
-              <CardHeader className="bg-white text-center pt-6 md:pt-8 pb-4 md:pb-6">
-                <div className="flex justify-center mb-3 md:mb-4">
-                  <PenTool className="h-10 w-10 md:h-12 md:w-12 text-purple-600" />
-                </div>
-                <CardTitle className="text-lg md:text-xl font-bold text-gray-800">CRÉATION DE LOGO</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-4 md:pt-6 flex-grow bg-white">
-                <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 mb-3 md:mb-4">Inclus</Badge>
-                <p className="text-gray-700 text-xs md:text-sm">
-                  Design professionnel d'un logo unique qui représente parfaitement votre marque.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Service 2 - Site Web */}
-            <Card className="border-2 border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-blue-200 animate-fade-up flex flex-col h-full bg-white" style={{ animationDelay: '0.2s' }}>
-              <CardHeader className="bg-white text-center pt-6 md:pt-8 pb-4 md:pb-6">
-                <div className="flex justify-center mb-3 md:mb-4">
-                  <Globe className="h-10 w-10 md:h-12 md:w-12 text-green-600" />
-                </div>
-                <CardTitle className="text-lg md:text-xl font-bold text-gray-800">SITE WEB</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-4 md:pt-6 flex-grow bg-white">
-                <Badge className="bg-green-100 text-green-700 hover:bg-green-200 mb-3 md:mb-4">Inclus</Badge>
-                <p className="text-gray-700 text-xs md:text-sm">
-                  Création d'un site web professionnel, responsive et optimisé pour les moteurs de recherche.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Service 3 - ERP */}
-            <Card className="border-2 border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-blue-200 animate-fade-up flex flex-col h-full bg-white" style={{ animationDelay: '0.3s' }}>
-              <CardHeader className="bg-white text-center pt-6 md:pt-8 pb-4 md:pb-6">
-                <div className="flex justify-center mb-3 md:mb-4">
-                  <BadgeDollarSign className="h-10 w-10 md:h-12 md:w-12 text-amber-600" />
-                </div>
-                <CardTitle className="text-lg md:text-xl font-bold text-gray-800">3 MOIS D'ABONNEMENT ERP</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-4 md:pt-6 flex-grow bg-white">
-                <Badge className="bg-amber-100 text-amber-700 hover:bg-amber-200 mb-3 md:mb-4">Inclus</Badge>
-                <p className="text-gray-700 text-xs md:text-sm">
-                  Accès complet à notre solution ERP pour gérer efficacement votre entreprise pendant 3 mois.
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Service 4 - Marketing Digital */}
-            <Card className="border-2 border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-blue-200 animate-fade-up flex flex-col h-full bg-white" style={{ animationDelay: '0.4s' }}>
-              <CardHeader className="bg-white text-center pt-6 md:pt-8 pb-4 md:pb-6">
-                <div className="flex justify-center mb-3 md:mb-4">
-                  <TrendingUp className="h-10 w-10 md:h-12 md:w-12 text-red-600" />
-                </div>
-                <CardTitle className="text-lg md:text-xl font-bold text-gray-800">1 MOIS DE MARKETING DIGITAL</CardTitle>
-              </CardHeader>
-              <CardContent className="pt-4 md:pt-6 flex-grow bg-white">
-                <Badge className="bg-red-100 text-red-700 hover:bg-red-200 mb-3 md:mb-4">Inclus</Badge>
-                <p className="text-gray-700 text-xs md:text-sm">
-                  Stratégie complète de marketing digital pour booster votre visibilité en ligne pendant 1 mois.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 max-w-5xl mx-auto">
+            {services.map((service, index) => (
+              <Card 
+                key={service.title}
+                className="border-2 border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-blue-200 flex flex-col h-full"
+                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+              >
+                <CardHeader className="text-center pt-4 md:pt-6 pb-2 md:pb-4">
+                  <div className="flex justify-center mb-2 md:mb-3">
+                    <service.icon className={`h-8 w-8 md:h-10 md:w-10 ${service.iconColor}`} />
+                  </div>
+                  <CardTitle className="text-sm md:text-lg font-bold text-gray-800">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex-grow pt-2 md:pt-4">
+                  <Badge className={`${service.badgeColor} hover:opacity-80 mb-2 md:mb-3 text-xs`}>
+                    Inclus
+                  </Badge>
+                  <p className="text-xs md:text-sm text-gray-700">
+                    {service.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
       
       {/* Call to Action Section */}
-      <section className="py-10 md:py-16 bg-white">
+      <section className="w-full py-6 md:py-10 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Prêt à lancer votre entreprise ?</h2>
-            <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8">
-              Notre pack lancement est conçu pour vous offrir tous les outils nécessaires pour démarrer votre activité avec une présence en ligne professionnelle.
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <h2 className="text-lg md:text-xl font-semibold text-gray-900">
+              Prêt à lancer votre entreprise ?
+            </h2>
+            <p className="text-xs md:text-base text-gray-600">
+              Notre pack lancement vous offre tous les outils nécessaires pour démarrer votre activité avec une présence en ligne professionnelle.
             </p>
             <Link to="/chatbot">
-              <Button className="rounded-full bg-blue-500 hover:bg-blue-600 px-6 md:px-8 py-5 md:py-6 text-base md:text-lg">
+              <Button className="rounded-full bg-blue-500 hover:bg-blue-600 px-4 md:px-6 py-2 md:py-3 text-xs md:text-base">
                 Contactez-nous
               </Button>
             </Link>

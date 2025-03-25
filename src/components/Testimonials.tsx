@@ -41,7 +41,6 @@ const Testimonials = () => {
   }, []);
 
   useEffect(() => {
-    // Animation similar to previous version...
     const headerTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -130,49 +129,50 @@ const Testimonials = () => {
   return (
     <section 
       id="testimonials" 
-      className="py-16 md:py-24 bg-gray-50 overflow-hidden"
+      className="py-12 sm:py-16 md:py-24 bg-gray-50 overflow-hidden"
       ref={sectionRef}
       aria-label="Témoignages de nos clients"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <h2 
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4"
             ref={titleRef}
           >
             Nos Solutions Digitales en Action
           </h2>
           <p 
-            className="text-xl text-gray-600"
+            className="text-base sm:text-lg md:text-xl text-gray-600"
             ref={subtitleRef}
           >
             Des solutions personnalisées qui transforment vos défis digitaux en opportunités de croissance.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 w-full max-w-9xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <Card
               key={index} 
-              className="border border-gray-200 transition-shadow cursor-pointer hover:shadow-lg"
+              className="border border-gray-200 transition-all duration-300 
+                         hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
               ref={el => setCardRef(el, index)}
             >
-              <CardContent className="p-6 pt-8 flex flex-col items-center text-center card-content">
-                <div className="mb-4 opacity-50">
+              <CardContent className="p-4 sm:p-6 pt-6 sm:pt-8 flex flex-col items-center text-center card-content">
+                <div className="mb-3 sm:mb-4 opacity-50">
                   {getTypeIcon(testimonial.type)}
                 </div>
                 
-                <Quote className="h-10 w-10 text-blue-500 mb-4 opacity-20" aria-hidden="true" />
+                <Quote className="h-8 w-8 sm:h-10 sm:w-10 text-blue-500 mb-3 sm:mb-4 opacity-20" aria-hidden="true" />
                 
-                <p className="text-gray-700 mb-6 italic text-base">
+                <p className="text-gray-700 mb-4 sm:mb-6 italic text-sm sm:text-base line-clamp-4">
                   "{testimonial.content}"
                 </p>
                 
                 <div className="flex flex-col items-center w-full">
-                  <div className="mb-2 font-semibold text-sm text-gray-600">
+                  <div className="mb-2 font-semibold text-xs sm:text-sm text-gray-600">
                     {testimonial.format}
                   </div>
-                  <div className="w-full h-48 overflow-hidden rounded-md">
+                  <div className="w-full h-36 sm:h-48 lg:h-56 overflow-hidden rounded-md">
                     <img
                       src={testimonial.image}
                       alt="Témoignage client"
