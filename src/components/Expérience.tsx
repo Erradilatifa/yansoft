@@ -195,7 +195,7 @@ const HeroSlider: React.FC = () => {
   }, [shouldAnimate]);
 
   return (
-    <div ref={sliderRef} className="relative w-full h-[500px] md:h-[700px] overflow-hidden opacity-95">
+    <div ref={sliderRef} className="relative w-full h-[700px] md:h-[700px] overflow-hidden opacity-95">
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -217,43 +217,44 @@ const HeroSlider: React.FC = () => {
           
           <div className="absolute inset-0 bg-black/50 z-10" />
           
-          <div className="relative z-20 max-w-6xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              {slide.title}
-            </h1>
-            
-            <p className="text-2xl md:text-3xl text-white/80 mb-10 max-w-3xl mx-auto">
-              {slide.subtitle}
-            </p>
-            
-            {slide.stats && (
-              <div className="stats-container grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                {slide.stats.map((stat, statIndex) => (
-                  <div key={statIndex} className="flex flex-col items-center">
-                    {index === current && shouldAnimate ? (
-                      <NumberCounter 
-                        value={stat.value} 
-                        prefix={stat.prefix} 
-                        suffix={stat.suffix} 
-                      />
-                    ) : (
-                      <div className="text-4xl md:text-5xl font-bold text-white">
-                        {stat.prefix}{stat.value}{stat.suffix}
-                      </div>
-                    )}
-                    <div className="text-md md:text-lg text-white/70 mt-3">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            )}
-            
-            <Button 
-              size="lg"
-              className="text-lg px-8 py-6 h-auto rounded-full bg-gradient-to-r from-brand-blue to-brand-violet hover:opacity-90"
-            >
-              {slide.buttonText}
-            </Button>
-          </div>
+          // Modifiez la partie du rendu des titres comme suit :
+<div className="relative z-20 max-w-6xl mx-auto px-4">
+  <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold text-white mb-4 md:mb-6">
+    {slide.title}
+  </h1>
+  
+  <p className="text-lg md:text-2xl lg:text-3xl text-white/80 mb-6 md:mb-10 max-w-3xl mx-auto">
+    {slide.subtitle}
+  </p>
+  
+  {slide.stats && (
+    <div className="stats-container grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 mb-8 md:mb-12">
+      {slide.stats.map((stat, statIndex) => (
+        <div key={statIndex} className="flex flex-col items-center">
+          {index === current && shouldAnimate ? (
+            <NumberCounter 
+              value={stat.value} 
+              prefix={stat.prefix} 
+              suffix={stat.suffix} 
+            />
+          ) : (
+            <div className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">
+              {stat.prefix}{stat.value}{stat.suffix}
+            </div>
+          )}
+          <div className="text-sm md:text-md lg:text-lg text-white/70 mt-2 md:mt-3">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  )}
+  
+  <Button 
+    size="lg"
+    className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto rounded-full bg-gradient-to-r from-brand-blue to-brand-violet hover:opacity-90"
+  >
+    {slide.buttonText}
+  </Button>
+</div>
         </div>
       ))}
       

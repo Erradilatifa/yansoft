@@ -116,10 +116,11 @@ const PackLancementPage = () => {
               Notre pack lancement vous offre tous les outils nécessaires pour démarrer votre activité avec une présence en ligne professionnelle.
             </p>
             <Link to="/chatbot">
-              <Button className="rounded-full bg-blue-500 hover:bg-blue-600 px-4 md:px-6 py-2 md:py-3 text-xs md:text-base">
-                Contactez-nous
-              </Button>
-            </Link>
+  <Button className="rounded-full bg-blue-500 hover:bg-blue-600 px-4 md:px-6 py-2 md:py-3 text-xs md:text-base mt-9">
+    Contactez-nous
+  </Button>
+</Link>
+
           </div>
         </div>
       </section>

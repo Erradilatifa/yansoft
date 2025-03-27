@@ -26,10 +26,12 @@ const Index = () => {
       <About/>
       <Experience/>
       <Services />
-      
+      <Testimonials />
       <Chatbot/>
       <ERPPage/>
       <PackLancementPage/>
+      <Footer />
+      
       
       
       
@@ -40,7 +42,7 @@ const Index = () => {
        <Marketing/>
        <Testimonials />
        <Contact /> 
-       <Footer />
+       
       */}
     </div>
   );

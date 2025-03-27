@@ -180,7 +180,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6">
-            <h1 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h1 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-18">
               Solutions numériques{" "}
               <span 
                 ref={gradientTextRef} 
