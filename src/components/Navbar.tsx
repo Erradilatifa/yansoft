@@ -22,12 +22,12 @@ const Navbar = () => {
 
   const NavLinks = [
     { href: "#hero", label: "Accueil" },
-    { href: "#about", label: "À propos de YANSOFT" },
-    { href: "#services", label: "Services" },
+    { href: "#about", label: "À propos de YANSOFT GROUP" },
+    { href: "#services", label: "Nos Services" },
     { href: "#chatbot", label: "Chatbot" },
-    { href: "#ertpage", label: "ERT" },
-    { href: "#pack", label: "Pack Lancement" },
-    { href: "#contact", label: "Contact" }
+    { href: "#ertpage", label: "ERP" },
+    { href: "#pack", label: "Nos Packs" },
+    { href: "#contact", label: "Contactez-nous" }
   ];
 
   return (
@@ -59,7 +59,7 @@ const Navbar = () => {
                 className="px-5 py-2 lg:px-7 lg:py-2.5 group relative overflow-hidden bg-brand-blue hover:bg-blue-800 transition-colors duration-300 rounded-full"
               >
                 <a href="#chatbot" className="flex items-center gap-2 lg:gap-3 text-xs lg:text-sm">
-                  Demander un devis
+                  Demandez un DEVIS
                   <ArrowBigRight className="h-4 w-4 lg:h-5 lg:w-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>

@@ -23,7 +23,7 @@ const testimonials = [
     format: "Site Web Professionnel"
   },
   {
-    content: "Une solution digitale complète qui combine application mobile et présence web, offrant une expérience utilisateur fluide et cohérente.",
+    content: "Une solution digitale complète et innovante qui combine application mobile et présence web, offrant une expérience utilisateur fluide, cohérente et optimisée.",
     image: "https://img.freepik.com/premium-photo/firstclass-service-quality-assurance-warranty-foundation-iso-certification-concept-foundation-satisfaction-service-experience-exhibition-foundation-production_808398-340.jpg?ga=GA1.1.1809202442.1705419947&semt=ais_hybrid",
     type: "multi",
     format: "Solution Digitale Complète"

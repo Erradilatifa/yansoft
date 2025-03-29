@@ -105,14 +105,17 @@ const ERPPage = () => {
               </Card>
 
               {/* Titanium Plan */}
-              <Card className="w-full border-2 border-purple-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-purple-300 animate-fade-up bg-white" style={{ animationDelay: '0.4s' }}>
-                <CardHeader className="bg-gradient-to-br from-purple-50 to-purple-100 text-center pt-4 sm:pt-6 pb-4 sm:pb-6">
-                  <div className="flex justify-center mb-3 sm:mb-4">
-                    <Shield className="h-8 w-8 sm:h-12 sm:w-12 text-purple-600" />
-                  </div>
-                  <CardTitle className="text-xl sm:text-2xl font-bold text-gray-800">TITANIUM</CardTitle>
-                  <p className="text-xs sm:text-sm text-gray-500 mt-0.5 sm:mt-2">Tarification personnalisée</p>
-                </CardHeader>
+           <Card className="w-full border-2 border-purple-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:border-purple-300 animate-fade-up bg-white" style={{ animationDelay: '0.4s' }}>
+             <CardHeader className="h-52 sm:h-100 bg-gradient-to-br from-purple-50 to-purple-100 text-center pt-4 sm:pt-6 pb-4 sm:pb-6 transition-all duration-300 hover:from-purple-100 hover:to-purple-200">
+             <div className="flex justify-center mb-3 sm:mb-4">
+           <Shield className=" w-8 sm:h-26 sm:w-12 text-purple-600" />
+    </div>
+    <CardTitle className="text-xl sm:text-2xl font-bold text-gray-800">TITANIUM</CardTitle>
+    <p className="text-xs sm:text-sm text-gray-500 mt-0.5 sm:mt-2">Tarification personnalisée</p>
+  </CardHeader>
+
+
+
                 <CardContent className="pt-4 sm:pt-6 bg-white min-h-[10rem]">
                   <ul className="space-y-2 sm:space-y-3">
                     <li className="flex items-start font-semibold text-gray-800">

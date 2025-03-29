@@ -177,18 +177,22 @@ const Team = () => {
               </h1>
               
               <p className="text-lg text-gray-700 mb-6">
-                Chez VISIONARY, notre équipe exceptionnelle est composée de 
-                professionnels passionnés et expérimentés issus de divers domaines 
-                de l'informatique et du développement. Chaque membre apporte 
-                son expertise unique, créant ainsi une synergie qui nous permet de 
-                relever les défis techniques les plus complexes.
+              Chez YANSOFT group, notre équipe se distingue par son expertise et son
+engagement envers l'excellence. Composée de professionnels talentueux et
+expérimentés dans divers domaines du développement logiciel, de l’ingénierie
+informatique et du digital, chaque membre contribue de manière significative à la
+réussite de nos projets. Grâce à cette diversité de compétences, nous sommes en
+mesure de relever des défis techniques complexes et de proposer des solutions
+innovantes, adaptées aux besoins spécifiques de nos clients
               </p>
               
               <p className="text-lg text-gray-700 mb-6">
-                Notre culture collaborative et innovante favorise la créativité, tout en mettant 
-                l'accent sur la satisfaction de nos clients. Nous nous engageons à 
-                fournir des solutions informatiques sur mesure et à accompagner nos 
-                clients à chaque étape de leur projet.
+              Notre approche collaborative et notre culture de l'innovation permettent à chaque
+membre de l’équipe d’exprimer sa créativité et de participer activement à la
+conception de solutions sur-mesure. Nous plaçons la satisfaction de nos clients au
+cœur de notre démarche et nous nous engageons à les accompagner avec
+professionnalisme et rigueur à chaque étape de leur projet, pour garantir la
+réussite et la pérennité de leurs initiatives numériques.
               </p>
               
               <p className="text-lg text-gray-700">

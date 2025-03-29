@@ -12,62 +12,59 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+const data = {
+    description: "Nous créons des sites web modernes, performants et adaptés à vos besoins, en mettant l'accent sur l'expérience utilisateur, la réactivité mobile et une conception esthétique. Chaque projet est unique, et nous nous assurons qu'il soit optimisé pour le référencement et les conversions.",
+    color: "blue"
+};
 
 const services = [
   {
     icon: Code,
-    title: "Développement site web",
+    title: "Développement Web",
     number: "01.",
-    description: "Le développement de sites web est un service clé que nous proposons chez YANSOFT. En tant qu'agence de développement de logiciel, nous comprenons l'importance d'un site web pour les entreprises dans le monde numérique d'aujourd'hui. C'est pourquoi nous sommes fiers de fournir des sites web exceptionnels qui sont esthétiques, conviviaux et efficaces pour nos clients.",
+    description: "Nous créons des sites web modernes, performants et adaptés à vos besoins, en mettant l'accent sur l'expérience utilisateur, la réactivité mobile et une conception esthétique. Chaque projet est unique, et nous nous assurons qu'il soit optimisé pour le référencement et les conversions.",
     color: "blue"
   },
   {
-    icon: Smartphone,
-    title: "Développement mobile",
-    number: "02.",
-    description: "Notre service de développement mobile chez YANSOFT repousse les limites de l'innovation pour créer des applications mobiles qui inspirent et engagent les utilisateurs. Grâce à notre expertise technique et à notre passion pour la conception centrée sur l'utilisateur, nous transformons vos idées en réalité numérique",
-    color: "violet"
-  },
-  {
-    icon: Globe,
-    title: "Développement sur mesure",
-    number: "03.",
-    description: "Le développement d'applications sur mesure est un service de création d'applications personnalisées pour les entreprises de toutes tailles et de tous les secteurs d'activité. Les applications sur mesure sont développées selon les besoins spécifiques de chaque entreprise et sont conçues pour répondre à leurs besoins uniques.",
-    color: "indigo"
-  },
-  {
     icon: ShoppingCart,
-    title: "Marketing Digital",
-    number: "04.",
-    description: "Notre service de marketing digital chez YANSOFT vise à propulser votre présence en ligne vers de nouveaux sommets. Nous comprenons que dans le paysage numérique en constante évolution, il est essentiel d'adopter des stratégies innovantes pour atteindre votre public cible de manière efficace.",
+    title: "Marketing Digital & Stratégie de Croissance",
+    number: "02.",
+    description: "Nous élaborons des stratégies marketing digitales sur mesure pour augmenter votre visibilité en ligne, générer des leads qualifiés et développer votre présence sur les réseaux sociaux. Nos campagnes sont axées sur des résultats mesurables pour garantir votre succès à long terme.",
     color: "green"
   },
   {
     icon: BarChart,
-    title: "Automatisation marketing",
-    number: "05.",
-    description: "Notre service d'automatisation marketing au sein de YANSOFT offre une solution intelligente pour rationaliser vos processus marketing et améliorer l'efficacité de vos campagnes.",
+    title: "Automatisation Marketing & CRM",
+    number: "03.",
+    description: "Optimisez vos processus marketing et relation client grâce à l'automatisation. Nous intégrons des solutions CRM intelligentes pour gérer vos leads, automatiser vos campagnes d'emailing, et offrir une expérience client personnalisée tout au long du parcours.",
     color: "amber"
   },
   {
+    icon: Globe,
+    title: "Développement d'Applications & Solutions Sur Mesure",
+    number: "04.",
+    description: "Nous concevons des applications web et mobiles sur mesure, adaptées à vos objectifs d'affaires. Nos solutions sont scalables, sécurisées et conçues pour améliorer votre productivité tout en répondant aux besoins spécifiques de votre entreprise.",
+    color: "indigo"
+  },
+  {
     icon: Database,
-    title: "Hébergement",
-    number: "06.",
-    description: "Notre service d'hébergement garantit une plateforme robuste et sécurisée pour vos sites web, applications et données en ligne. Avec des solutions adaptées à vos besoins, nous assurons disponibilité, performances et sécurité.",
+    title: "Hébergement & Infrastructures Sécurisées",
+    number: "05.",
+    description: "Nous proposons des services d'hébergement web hautement sécurisés, allant des solutions mutualisées aux serveurs dédiés, pour garantir des performances optimales et une disponibilité continue. Votre sécurité et la protection de vos données sont notre priorité.",
     color: "red"
   },
   {
     icon: Layers,
-    title: "Conseil et accompagnement",
-    number: "07.",
-    description: "Avec notre service de conseil en IT chez YANSOFT, nous vous offrons un accompagnement personnalisé pour améliorer votre infrastructure. Profitez également de nos services d'audit pour évaluer votre environnement informatique et mettre en place des solutions efficaces.",
+    title: "Conseil & Accompagnement IT",
+    number: "06.",
+    description: "Avec notre expertise en informatique et transformation digitale, nous vous offrons des services de conseil personnalisés pour optimiser votre infrastructure et mettre en place des solutions performantes adaptées à vos besoins spécifiques. Nous vous guidons tout au long de votre parcours digital.",
     color: "purple"
   },
   {
     icon: RefreshCw,
-    title: "Intégration de solutions tierces",
-    number: "08.",
-    description: "Notre expertise chez YANSOFT réside dans l'intégration fluide de solutions tierces dans votre système, combinée à une gestion rigoureuse de projet. Nous assurons la coordination complète du processus, de la conception à la mise en œuvre, pour garantir le déploiement réussi de solutions innovantes.",
+    title: "Intégration de Solutions Tierces & API",
+    number: "07.",
+    description: "Nous facilitons l'intégration de solutions tierces et d'API pour une gestion optimale de vos processus. En particulier, nous vous accompagnons dans l'intégration d'un ERP (Enterprise Resource Planning) tel qu'Odoo, une solution complète pour automatiser et centraliser vos opérations commerciales. Grâce à Odoo, vous pouvez gérer efficacement vos CRM, stocks, facturation, achats, ventes, et bien plus encore. Nous proposons également l'intégration de chatbots pour automatiser vos interactions clients, améliorer l'engagement sur votre site web et répondre en temps réel à vos prospects et clients. Cette intégration permet d'améliorer la visibilité de vos données, de simplifier la gestion des ressources et d'optimiser la prise de décision pour la croissance de votre entreprise.",
     color: "cyan"
   }
 ];
@@ -214,7 +211,8 @@ const Services = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 ref={titleRef} className="text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
           <p ref={descriptionRef} className="text-xl text-gray-600">
-            Nous proposons une gamme complète de services de développement pour répondre à tous vos besoins numériques.
+          Une offre complète de solutions digitales sur mesure pour propulser votre
+          entreprise dans l’ère numérique.
           </p>
         </div>
         

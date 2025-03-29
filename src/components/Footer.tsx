@@ -8,24 +8,24 @@ const Footer = () => {
       title: "Services",
       links: [
         { name: "Développement Web", href: "#services" },
-        { name: "Développement Mobile", href: "#services" },
-        { name: "Développement sur mesure", href: "#services" },
-        { name: "Marketing Digital", href: "#services" },
-        { name: "Automatisation marketing", href: "#services" },
-        { name: "Hébergement", href: "#services" },
-        { name: "Conseil et accompagnement", href: "#services" }
+        { name: "Marketing Digital & Stratégie de Croissance", href: "#services" },
+        { name: "Automatisation Marketing & CRM", href: "#services" },
+        { name: "Développement d’Applications & Solutions Sur Mesure", href: "#services" },
+        { name: "Hébergement & Infrastructures Sécurisées", href: "#services" },
+        { name: "Conseil & Accompagnement IT", href: "#services" },
+        { name: "Intégration de Solutions Tierces & API", href: "#services" },
       ]
     },
     {
       title: "Entreprise",
       links: [
         { name: "Accueil", href: "#hero" },
-        { name: "À propos de YANSOFT", href: "#about" },
+        { name: "À propos de YANSOFT GROUP", href: "#about" },
         { name: "Services", href: "#services" },
         { name: "Chatbot", href: "#chatbot" },
-        { name: "ERT", href: "#ert" },
-        { name: "Pack Lancement", href: "#pack" },
-        { name: "Contact", href: "#contact" },
+        { name: "ERT", href: "#ertpage" },
+        { name: "Nos Packs", href: "#pack" },
+        { name: "Contactez-nous", href: "#contact" },
       ]
     },
   ];

@@ -121,9 +121,10 @@ const About = () => {
       <div ref={heroRef} className="bg-gradient-to-b from-blue-400 to-indigo-700 text-white py-20 opacity-55 min-h-[300px] sm:min-h-[400px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">À propos de YANSOFT</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">À propos de YANSOFT group</h1>
             <p className="text-base sm:text-xl opacity-90 mb-6 sm:mb-8">
-              Nous transformons vos idées en solutions numériques innovantes et performantes
+            Nous concevons des solutions digitales intelligentes pour propulser votre
+            entreprise.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/services" className="bg-white text-blue-600 hover:bg-blue-50 font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors duration-300 text-center">
@@ -144,7 +145,7 @@ const About = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Notre Histoire</h2>
             <div className="w-16 h-1 bg-blue-600 mx-auto mb-4 sm:mb-6"></div>
             <p className="text-base sm:text-lg text-gray-600">
-              Découvrez l'histoire de YANSOFT et comment nous sommes devenus un acteur majeur du développement logiciel au Maroc
+            Explorez le voyage de YANSOFT GROUP, une entreprise passionnée qui a su allier expertise et innovation pour se positionner comme un leader dans le développement logiciel au Maroc.
             </p>
           </div>
 
@@ -153,13 +154,31 @@ const About = () => {
               <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Présentation de l'agence</h3>
               <div className="space-y-4 text-sm sm:text-base">
                 <p className="text-gray-700">
-                  <span className="font-semibold">YANSOFT est une agence de développement de logiciels et d'hébergement de sites web basée à Casablanca, Maroc.</span> Fondée en 2015, notre agence s'est rapidement fait un nom dans le secteur grâce à notre approche centrée sur le client et notre excellence technique.
+                  <span className="font-semibold">YANSOFT group est une agence de développement de logiciels et d'hébergement
+                  web basée à Casablanca, au cœur de l'innovation technologique.</span> . Forte d'une
+équipe de professionnels passionnés et hautement qualifiés, notre mission est de
+transformer vos défis numériques en opportunités grâce à des solutions surmesure et performantes.
                 </p>
                 <p className="text-gray-700">
-                  Nous croyons que chaque entreprise est unique, c'est pourquoi nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins spécifiques et leur fournir des solutions personnalisées qui correspondent parfaitement à leurs objectifs commerciaux.
+                Nous comprenons que chaque projet est unique. C’est pourquoi nous mettons un
+                point d’honneur à travailler en étroite collaboration avec nos clients pour saisir
+                leurs besoins spécifiques et leur proposer des solutions parfaitement adaptées.
+                Notre expertise couvre un large éventail de services, incluant le développement de
+                logiciels personnalisés, la création de sites web intuitifs, l’intégration de solutions
+                tierces, l’hébergement sécurisé et la gestion des noms de domaine.
                 </p>
                 <p className="text-gray-700">
-                  Notre gamme de services comprend le développement de logiciels personnalisés, la création de sites web, l'intégration de solutions tierces, l'hébergement de sites web et la gestion de noms de domaine. Nous offrons également des services de conseil pour aider nos clients à tirer le meilleur parti de leurs investissements en technologie.
+                En tant que partenaires stratégiques de nos clients, nous allons au-delà de la
+simple prestation technique. Nous offrons également des services de conseil afin
+d’optimiser vos investissements technologiques et maximiser la rentabilité de vos
+projets. Notre objectif est simple : vous accompagner à chaque étape pour
+garantir le succès de vos initiatives digitales.
+                </p>
+                <p className="text-gray-700">
+                  <span className="font-semibold">Chez YANSOFT group</span> nous allions innovation, excellence et réactivité. Nous nous
+engageons à offrir des solutions de haute qualité, au service de vos ambitions, à
+des prix compétitifs. Ensemble, donnons vie à vos idées et propulsons votre
+entreprise vers l'avenir numérique.
                 </p>
               </div>
             </div>
@@ -170,11 +189,19 @@ const About = () => {
               </div>
               <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Notre mission</h4>
               <p className="text-gray-700 mb-4 sm:mb-6 text-sm sm:text-base">
-                Notre mission est de fournir des solutions technologiques de qualité qui aident nos clients à prospérer dans l'économie numérique d'aujourd'hui. Nous nous engageons à offrir un service exceptionnel, une expertise technique approfondie et une valeur ajoutée tangible à chaque projet.
+              Notre mission est de permettre aux entreprises de tirer parti de la technologie
+              pour atteindre leurs objectifs stratégiques. En tant que partenaire technologique
+              de confiance, nous nous engageons à fournir des solutions logicielles et
+              numériques de haute qualité, tout en assurant un accompagnement constant
+              pour garantir la réussite des projets de nos clients, quels que soient leur secteur
+              d'activité ou leurs défis spécifiques.
               </p>
               <h4 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Notre vision</h4>
               <p className="text-gray-700 text-sm sm:text-base">
-                Nous aspirons à devenir le partenaire technologique de référence pour les entreprises au Maroc et dans toute l'Afrique du Nord, en établissant de nouvelles normes d'excellence en matière de développement logiciel et de services d'hébergement.
+              Être le leader du développement de solutions numériques sur-mesure et de
+              services d'hébergement au Maroc et à l'international. Nous aspirons à transformer
+              le paysage technologique des entreprises en offrant des solutions innovantes,
+              fiables et parfaitement adaptées aux besoins de chaque client.
               </p>
             </div>
           </div>

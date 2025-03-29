@@ -15,7 +15,6 @@ const Hero = () => {
   const gradientTextRef = useRef(null);
   const paragraphRef = useRef(null);
   const buttonsRef = useRef(null);
-  const techStackRef = useRef(null);
   const cardRef = useRef(null);
   const circleOneRef = useRef(null);
   const circleTwoRef = useRef(null);
@@ -23,31 +22,31 @@ const Hero = () => {
 
   const services = [
     {
-      title: "Développement de Sites Web",
+      title: "Développement Web",
       icon: "🌐"
     },
     {
-      title: "Marketing Digital",
+      title: "Marketing Digital & Stratégie de Croissance",
       icon: "📈"
     },
     {
-      title: "Automatisation Marketing",
+      title: "Développement d’Applications & Solutions Sur Mesure",
       icon: "🤖"
     },
     {
-      title: "Développement sur Mesure",
+      title: "Développement d’Applications & Solutions Sur Mesure",
       icon: "🛠️"
     },
     {
-      title: "Hébergement",
+      title: "Hébergement & Infrastructures Sécurisées",
       icon: "🖥️"
     },
     {
-      title: "Conseil et Accompagnement",
+      title: "Conseil & Accompagnement IT",
       icon: "🧑‍💼"
     },
     {
-      title: "Intégration de Solutions Tierces",
+      title: "Intégration de Solutions Tierces & API",
       icon: "🔗"
     }
   ];
@@ -78,14 +77,7 @@ const Hero = () => {
       stagger: 0.2 
     }, "-=0.4");
     
-    // Animate tech stack
-    tl.from(techStackRef.current.children, { 
-      y: 10, 
-      opacity: 0, 
-      duration: 0.4, 
-      stagger: 0.1 
-    }, "-=0.2");
-    
+ 
     // Card animation
     tl.from(cardRef.current, { 
       scale: 0.9, 
@@ -180,40 +172,30 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6">
-            <h1 ref={headingRef} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-18">
-              Solutions numériques{" "}
+            <h1 ref={headingRef} className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight mb-28">
+            L’excellence numérique au service de votre croissance{" "} <br />
               <span 
                 ref={gradientTextRef} 
                 className="bg-gradient-to-r from-brand-blue to-brand-violet bg-clip-text text-transparent inline-block"
               >
-                innovantes
+               croissance
               </span>
             </h1>
-            <p ref={paragraphRef} className="text-xl text-gray-600 max-w-xl">
-              Nous créons des applications web et mobiles sur mesure qui transforment votre vision en réalité numérique.
+            <p ref={paragraphRef} className="text-xl text-gray-600 max-w-xl mb-30">
+            Boostez votre business avec des solutions digitales sur mesure.
             </p>
-            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
+            <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 mb-28">
               <Button size="lg" asChild>
                 <a href="#contact">
-                  Démarrer un projet
+                Je lance mon projet
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <a href="#services">
-                  Découvrir nos services
+                Nos services
                 </a>
               </Button>
-            </div>
-            <div className="pt-8">
-              <p className="text-sm text-gray-500 mb-3">Nos technologies préférées</p>
-              <div ref={techStackRef} className="flex flex-wrap gap-4">
-                <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">React</div>
-                <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">React Native</div>
-                <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Node.js</div>
-                <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">Flutter</div>
-                <div className="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium">TypeScript</div>
-              </div>
             </div>
           </div>
           <div className="relative lg:pl-10">
@@ -234,8 +216,8 @@ const Hero = () => {
                       <span className="text-sm font-medium">Mobile</span>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-2">De l'idée au lancement</h3>
-                  <p className="text-gray-600 mb-4">Des solutions adaptées à tous vos besoins</p>
+                  <h3 className="text-xl font-bold mb-2">De l'idée à la réalité</h3>
+                  <p className="text-gray-600 mb-4">Donnez vie à vos projets numériques.</p>
                 </div>
               </div>
               <div className="px-6 py-6">
@@ -253,7 +235,9 @@ const Hero = () => {
                 </div>
               </div>
               {/* Cercles décoratifs */}
-              <div ref={circleOneRef} className="absolute -bottom-6 -right-6 w-64 h-64 bg-gray-100 rounded-full -z-10"></div>
+              <div ref={circleOneRef} className="absolute -bottom-6 -right-6 w-64 h-64 bg-gradient-to-b from-blue-200 to-indigo-400 rounded-full -z-10"></div>
+
+
               <div ref={circleTwoRef} className="absolute -top-6 -left-6 w-32 h-32 bg-blue-100 rounded-full -z-10"></div>
             </div>
           </div>

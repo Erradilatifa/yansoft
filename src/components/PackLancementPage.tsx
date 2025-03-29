@@ -11,29 +11,38 @@ const PackLancementPage = () => {
       icon: PenTool,
       iconColor: 'text-purple-600',
       title: 'CRÉATION DE LOGO',
-      description: 'Design professionnel d\'un logo unique qui représente parfaitement votre marque.',
-      badgeColor: 'bg-purple-100 text-purple-700'
+      description: 'Création d\'un logo unique et professionnel qui reflète parfaitement l\'identité de votre marque.',
+
+      badgeColor: 'bg-purple-100 text-purple-700',
+      iconClasses: 'mb-14', // Ajout de margin top et bottom pour l'icône
+      titleClasses: 'mt-6 ' // Ajout de margin top et bottom pour le titre
     },
     {
       icon: Globe,
       iconColor: 'text-green-600',
       title: 'SITE WEB',
       description: 'Création d\'un site web professionnel, responsive et optimisé pour les moteurs de recherche.',
-      badgeColor: 'bg-green-100 text-green-700'
+      badgeColor: 'bg-green-100 text-green-700',
+      iconClasses: 'mb-14',
+      titleClasses: 'mb-3'
     },
     {
       icon: BadgeDollarSign,
       iconColor: 'text-amber-600',
       title: '3 MOIS D\'ABONNEMENT ERP',
       description: 'Accès complet à notre solution ERP pour gérer efficacement votre entreprise pendant 3 mois.',
-      badgeColor: 'bg-amber-100 text-amber-700'
+      badgeColor: 'bg-amber-100 text-amber-700',
+      iconClasses: 'mb-4 mt-2',
+      titleClasses: 'mb-3 mt-1'
     },
     {
       icon: TrendingUp,
       iconColor: 'text-red-600',
       title: '1 MOIS DE MARKETING DIGITAL',
       description: 'Stratégie complète de marketing digital pour booster votre visibilité en ligne pendant 1 mois.',
-      badgeColor: 'bg-red-100 text-red-700'
+      badgeColor: 'bg-red-100 text-red-700',
+      iconClasses: 'mb-4 mt-2',
+      titleClasses: 'mb-3 mt-1'
     }
   ];
 
@@ -84,10 +93,10 @@ const PackLancementPage = () => {
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
                 <CardHeader className="text-center pt-4 md:pt-6 pb-2 md:pb-4">
-                  <div className="flex justify-center mb-2 md:mb-3">
+                  <div className={`flex justify-center ${service.iconClasses}`}>
                     <service.icon className={`h-8 w-8 md:h-10 md:w-10 ${service.iconColor}`} />
                   </div>
-                  <CardTitle className="text-sm md:text-lg font-bold text-gray-800">
+                  <CardTitle className={`text-sm md:text-lg font-bold text-gray-800 ${service.titleClasses}`}>
                     {service.title}
                   </CardTitle>
                 </CardHeader>
@@ -116,11 +125,10 @@ const PackLancementPage = () => {
               Notre pack lancement vous offre tous les outils nécessaires pour démarrer votre activité avec une présence en ligne professionnelle.
             </p>
             <Link to="/chatbot">
-  <Button className="rounded-full bg-blue-500 hover:bg-blue-600 px-4 md:px-6 py-2 md:py-3 text-xs md:text-base mt-9">
-    Contactez-nous
-  </Button>
-</Link>
-
+              <Button className="rounded-full bg-blue-500 hover:bg-blue-600 px-4 md:px-6 py-2 md:py-3 text-xs md:text-base m-9">
+                Contactez-nous
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
