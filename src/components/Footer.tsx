@@ -92,19 +92,17 @@ const Footer = () => {
                 qui transforment les idées en produits numériques performants.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Facebook className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Twitter className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Instagram className="h-5 w-5" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  <Linkedin className="h-5 w-5" />
-                </a>
-              </div>
+  <a href="https://www.facebook.com/share/18PxbzyBpx/?mibextid=wwXIfr" className="text-gray-400 hover:text-white transition-colors">
+    <Facebook className="h-5 w-5" />
+  </a>
+  <a href="https://www.instagram.com/yansoft_?igsh=MXFjYWJnemVnOWh6eQ==" className="text-gray-400 hover:text-white transition-colors">
+    <Instagram className="h-5 w-5" />
+  </a>
+  <a href="https://www.linkedin.com/company/yan-soft/?viewAsMember=true" className="text-gray-400 hover:text-white transition-colors">
+    <Linkedin className="h-5 w-5" />
+  </a>
+</div>
+
             </div>
            
             {footerLinks.map((column, index) => (
